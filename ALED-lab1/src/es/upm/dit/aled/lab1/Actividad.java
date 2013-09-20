@@ -15,11 +15,11 @@ public class Actividad {
 	/**
 	 * Constructor de la clase. Inicia el estado del objeto fijando la duración de esta actividad.
 	 * @param minutos Tiempo que dura esta actividad.
-	 * @throws Exception Si minutos incluye un valor negativo.
+	 * @throws ParametroErroneoException Si minutos incluye un valor negativo.
 	 */
-	public Actividad(int minutos) throws Exception{
+	public Actividad(int minutos) throws ParametroErroneoException{
 		if(minutos<0)
-			throw new Exception("La duración del ejercicio no puede ser negativa.");
+			throw new ParametroErroneoException("La duración del ejercicio no puede ser negativa.");
 		
 		duracion = minutos;
 	}
@@ -27,11 +27,11 @@ public class Actividad {
 	/**
 	 * Fija la duración de esta actividad.
 	 * @param nuevaDuracion La nueva duración de esta actividad, en minutos.
-	 * @throws Exception Si nuevaDuracion incluye un valor negativo.
+	 * @throws ParametroErroneoException Si nuevaDuracion incluye un valor negativo.
 	 */
-	public void setDuracion(int nuevaDuracion) throws Exception{
+	public void setDuracion(int nuevaDuracion) throws ParametroErroneoException{
 		if(nuevaDuracion<0)
-			throw new Exception("La duración del ejercicio no puede ser negativa.");
+			throw new ParametroErroneoException("La duración del ejercicio no puede ser negativa.");
 		
 		duracion = nuevaDuracion;	
 	}
